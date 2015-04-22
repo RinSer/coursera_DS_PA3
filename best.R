@@ -25,7 +25,7 @@ best <- function(state, outcome) {
                 colnum <- 23
         }
         
-        stateOutcome[, colnum] <- as.numeric(stateOutcome[, colnum])
+        stateOutcome[, colnum] <- suppressWarnings(as.numeric(stateOutcome[, colnum]))
         
         hospitals <- with(stateOutcome, Hospital.Name[ stateOutcome[, colnum] == min(stateOutcome[, colnum], na.rm=TRUE)])
         
